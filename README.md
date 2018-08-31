@@ -9,6 +9,10 @@ There is also a fourth application for creating and editing maps.
 
 The client and editor interface were made with the ncurses library and react to the mouse.
 
+## Travis
+
+[![Build Status](https://travis-ci.com/PamplemousseMR/Left4Dead.svg?branch=master)](https://travis-ci.com/PamplemousseMR/Left4Dead)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -23,6 +27,7 @@ These instructions will get you a copy of the project up and running on your loc
 Compile using the makefile : `make`.
 
 ```
+- all : Compile everything.
 - editor : Compiles the editor.
 - server : Compile the server.
 - game : Compiles the game engine.
@@ -32,14 +37,14 @@ Compile using the makefile : `make`.
 
 ### use
 
-Start the editor to create maps : `./editor`.
+Start the editor to create maps : `./editor_exe`.
 ```
 -h [options] : Displays help for execution arguments. 
 -n [options] <path> : Specify the name of the backup file.
 -l [options] <path> : Specify a file to load.
 ```
 
-Start the game to create the game motor : `./game`.
+Start the game to create the game motor : `./game_exe`.
 ```
 -h [options] : Displays help for execution arguments. 
 -c [options] <key> : to specify the key of the message queue.
@@ -49,7 +54,7 @@ Start the game to create the game motor : `./game`.
 -d [options] : Cleans the IPC if there is a problem during a previous creation that would not have deleted the IPC tools itself.
 ```
 
-Start the server to create the server : `./server`.
+Start the server to create the server : `./server_exe`.
 ```
 -h [options] : Displays help for execution arguments. 
 -c [options] <key> : to specify the key of the message queue.
@@ -60,7 +65,7 @@ Start the server to create the server : `./server`.
 -n [options] <name> : Allows to specify name of the named tube.
 ```
 
-Start the player to create a new player : `./player`.
+Start the player to create a new player : `./player_exe`.
 ```
 -h [options] : Displays help for execution arguments. 
 -p [options] <port> : Specify the first TCP connection port.

@@ -27,11 +27,13 @@ void initNcurses()
     refresh();
     noecho();
     mousemask(BUTTON1_CLICKED, NULL);
+    #ifndef __APPLE__
     if(has_mouse() != TRUE)
     {
         fprintf(stderr, "[initNcurses] Aucune souris n'est détectée\n");
         exit(EXIT_FAILURE);
     }
+    #endif
 }
 
 void endNcurses()

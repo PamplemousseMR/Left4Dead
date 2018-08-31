@@ -1,7 +1,8 @@
 CC = gcc
-CCFLAGS_STD = -Wall -Werror -O3 -ansi -pedantic -o
-CCFLAGS = $(CC) $(CCFLAGS_STD)
-CCLIB = -lcurses -pthread
+CCFLAGS_STD = -Wall -Werror -O3 -pedantic
+CCFLAGS = $(CC) $(CCFLAGS_STD) -ansi -o
+CCFLAGS_MAIN = $(CC) $(CCFLAGS_STD) -o
+CCLIB = -lcurses -lpthread
 
 COMMUNDIR = Commun/
 
@@ -15,7 +16,7 @@ all :
 
 EDITOROUTDIR = EditorOFiles/
 EDITORDIR = Editor/
-EDITOREXEC = editor
+EDITOREXEC = editor_exe
 
 EDITOROBJETS = $(EDITOROUTDIR)main.o $(EDITOROUTDIR)ncurses.o $(EDITOROUTDIR)map.o $(EDITOROUTDIR)signal.o $(EDITOROUTDIR)option.o
 
@@ -25,7 +26,7 @@ editor_directory :
 	mkdir -p $(EDITOROUTDIR)
 
 editor_compile : $(EDITOROBJETS)
-	$(CCFLAGS) $(EDITOREXEC) $(EDITOROBJETS) $(CCLIB)
+	$(CCFLAGS_MAIN) $(EDITOREXEC) $(EDITOROBJETS) $(CCLIB)
 
 $(EDITOROUTDIR)main.o : $(EDITORDIR)main.c $(EDITORDIR)ncurses.h $(EDITORDIR)signal.h $(EDITORDIR)option.h $(COMMUNDIR)map.h
 	 $(CCFLAGS) $(EDITOROUTDIR)main.o -c $(EDITORDIR)main.c
@@ -46,7 +47,7 @@ $(EDITOROUTDIR)map.o : $(COMMUNDIR)map.c $(COMMUNDIR)map.h
 
 GAMEOUTDIR = GameOFiles/
 GAMEDIR = Game/
-GAMEEXEC = game
+GAMEEXEC = game_exe
 
 GAMEOBJETS = $(GAMEOUTDIR)main.o $(GAMEOUTDIR)option.o $(GAMEOUTDIR)signal.o $(GAMEOUTDIR)IPC.o $(GAMEOUTDIR)map.o $(GAMEOUTDIR)items.o $(GAMEOUTDIR)zombie.o $(GAMEOUTDIR)human.o $(GAMEOUTDIR)messages.o
 
@@ -56,7 +57,7 @@ game_directory :
 	mkdir -p $(GAMEOUTDIR)
 
 game_compile : $(GAMEOBJETS)
-	$(CCFLAGS) $(GAMEEXEC) $(GAMEOBJETS) $(CCLIB)
+	$(CCFLAGS_MAIN) $(GAMEEXEC) $(GAMEOBJETS) $(CCLIB)
 
 $(GAMEOUTDIR)main.o : $(GAMEDIR)main.c $(GAMEDIR)option.h $(GAMEDIR)signal.h $(GAMEDIR)IPC.h $(GAMEDIR)items.h $(GAMEDIR)messages.h $(GAMEDIR)zombie.h $(GAMEDIR)human.h $(COMMUNDIR)map.h
 	$(CCFLAGS) $(GAMEOUTDIR)main.o -c $(GAMEDIR)main.c
@@ -89,7 +90,7 @@ $(GAMEOUTDIR)map.o : $(COMMUNDIR)map.c $(COMMUNDIR)map.h
 
 SERVEROUTDIR = ServerOFiles/
 SERVERDIR = Server/
-SERVEREXEC = server
+SERVEREXEC = server_exe
 
 SERVEROBJETS = $(SERVEROUTDIR)main.o $(SERVEROUTDIR)option.o $(SERVEROUTDIR)signal.o $(SERVEROUTDIR)IPC.o $(SERVEROUTDIR)connection.o $(SERVEROUTDIR)UDPData.o
 
@@ -99,7 +100,7 @@ server_directory :
 	mkdir -p $(SERVEROUTDIR)
 
 server_compile : $(SERVEROBJETS)
-	$(CCFLAGS) $(SERVEREXEC) $(SERVEROBJETS) $(CCLIB)
+	$(CCFLAGS_MAIN) $(SERVEREXEC) $(SERVEROBJETS) $(CCLIB)
 
 $(SERVEROUTDIR)main.o : $(SERVERDIR)main.c $(SERVERDIR)option.h $(SERVERDIR)signal.h $(SERVERDIR)IPC.h $(SERVERDIR)connection.h $(SERVERDIR)UDPData.h
 	$(CCFLAGS) $(SERVEROUTDIR)main.o -c $(SERVERDIR)main.c
@@ -123,7 +124,7 @@ $(SERVEROUTDIR)option.o : $(SERVERDIR)option.c $(SERVERDIR)option.h $(COMMUNDIR)
 
 PLAYEROUTDIR = PlayerOFiles/
 PLAYERDIR = Player/
-PLAYEREXEC = player
+PLAYEREXEC = player_exe
 
 PLAYEROBJETS = $(PLAYEROUTDIR)main.o $(PLAYEROUTDIR)option.o $(PLAYEROUTDIR)signal.o $(PLAYEROUTDIR)connection.o $(PLAYEROUTDIR)ncurses.o $(PLAYEROUTDIR)map.o $(PLAYEROUTDIR)update.o $(PLAYEROUTDIR)getkey.o $(PLAYEROUTDIR)list.o $(PLAYEROUTDIR)astar.o $(PLAYEROUTDIR)move.o
 
@@ -133,7 +134,7 @@ player_directory :
 	mkdir -p $(PLAYEROUTDIR)
 
 player_compile : $(PLAYEROBJETS)
-	$(CCFLAGS) $(PLAYEREXEC) $(PLAYEROBJETS) $(CCLIB)
+	$(CCFLAGS_MAIN) $(PLAYEREXEC) $(PLAYEROBJETS) $(CCLIB)
 
 $(PLAYEROUTDIR)main.o : $(PLAYERDIR)main.c $(PLAYERDIR)option.h $(PLAYERDIR)signal.h $(PLAYERDIR)connection.h $(PLAYERDIR)ncurses.h $(PLAYERDIR)update.h $(PLAYERDIR)getkey.h $(PLAYERDIR)move.h $(COMMUNDIR)default.h
 	$(CCFLAGS) $(PLAYEROUTDIR)main.o -c $(PLAYERDIR)main.c

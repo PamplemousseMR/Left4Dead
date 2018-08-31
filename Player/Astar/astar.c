@@ -159,7 +159,7 @@ static char foundBest(node_t* end)
     for (taille = 1; taille <= diffMax && !found; ++taille)
     {
         /*ligne du haut*/
-        if (end->line - taille >= 0)
+        if ((int)(end->line - taille) >= 0)
         {
             for (i = 0; i < taille * 2 + 1 && !found; ++i)
             {
@@ -193,7 +193,7 @@ static char foundBest(node_t* end)
         }
 
         /*colonne de gauche*/
-        if (end->col - taille >= 0)
+        if ((int)(end->col - taille) >= 0)
         {
             for (i = 1; i < taille * 2 && !found; ++i)
             {
