@@ -12,7 +12,7 @@
 #include "messages.h"
 #include "human.h"
 
-#include "../Commun/map.h"
+#include "../commun/map.h"
 
 /* =============== Variables =============== */
 

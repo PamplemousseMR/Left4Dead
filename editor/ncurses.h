@@ -5,7 +5,7 @@
 #include <ncurses.h>                                    /* ncurses */
 #include <string.h>                                     /* strlen */
 
-#include "../Commun/map.h"
+#include "../commun/map.h"
 
 /* =============== Les tailles des fenêtres =============== */
 

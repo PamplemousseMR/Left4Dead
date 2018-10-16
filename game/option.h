@@ -8,7 +8,7 @@
 #include <unistd.h>                     /* getopt */
 #include <sys/sem.h>                    /* key_t */
 #include <string.h>                     /* strcpy */
-#include "../Commun/default.h"
+#include "../commun/default.h"
 
 /* =============== Variables =============== */
 

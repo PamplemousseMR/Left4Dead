@@ -4,7 +4,7 @@ CCFLAGS = $(CC) $(CCFLAGS_STD) -ansi -o
 CCFLAGS_MAIN = $(CC) $(CCFLAGS_STD) -o
 CCLIB = -lcurses -lpthread
 
-COMMUNDIR = Commun/
+COMMUNDIR = commun/
 
 all : 
 	make editor
@@ -14,8 +14,8 @@ all :
 
 #=============== Editor ===============
 
-EDITOROUTDIR = EditorOFiles/
-EDITORDIR = Editor/
+EDITOROUTDIR = editorOFiles/
+EDITORDIR = editor/
 EDITOREXEC = editor_exe
 
 EDITOROBJETS = $(EDITOROUTDIR)main.o $(EDITOROUTDIR)ncurses.o $(EDITOROUTDIR)map.o $(EDITOROUTDIR)signal.o $(EDITOROUTDIR)option.o
@@ -45,8 +45,8 @@ $(EDITOROUTDIR)map.o : $(COMMUNDIR)map.c $(COMMUNDIR)map.h
 
 #=============== Game ===============
 
-GAMEOUTDIR = GameOFiles/
-GAMEDIR = Game/
+GAMEOUTDIR = gameOFiles/
+GAMEDIR = game/
 GAMEEXEC = game_exe
 
 GAMEOBJETS = $(GAMEOUTDIR)main.o $(GAMEOUTDIR)option.o $(GAMEOUTDIR)signal.o $(GAMEOUTDIR)IPC.o $(GAMEOUTDIR)map.o $(GAMEOUTDIR)items.o $(GAMEOUTDIR)zombie.o $(GAMEOUTDIR)human.o $(GAMEOUTDIR)messages.o
@@ -88,8 +88,8 @@ $(GAMEOUTDIR)map.o : $(COMMUNDIR)map.c $(COMMUNDIR)map.h
 
 #=============== Server ===============
 
-SERVEROUTDIR = ServerOFiles/
-SERVERDIR = Server/
+SERVEROUTDIR = serverOFiles/
+SERVERDIR = server/
 SERVEREXEC = server_exe
 
 SERVEROBJETS = $(SERVEROUTDIR)main.o $(SERVEROUTDIR)option.o $(SERVEROUTDIR)signal.o $(SERVEROUTDIR)IPC.o $(SERVEROUTDIR)connection.o $(SERVEROUTDIR)UDPData.o
@@ -122,8 +122,8 @@ $(SERVEROUTDIR)option.o : $(SERVERDIR)option.c $(SERVERDIR)option.h $(COMMUNDIR)
 
 #=============== Player ===============
 
-PLAYEROUTDIR = PlayerOFiles/
-PLAYERDIR = Player/
+PLAYEROUTDIR = playerOFiles/
+PLAYERDIR = player/
 PLAYEREXEC = player_exe
 
 PLAYEROBJETS = $(PLAYEROUTDIR)main.o $(PLAYEROUTDIR)option.o $(PLAYEROUTDIR)signal.o $(PLAYEROUTDIR)connection.o $(PLAYEROUTDIR)ncurses.o $(PLAYEROUTDIR)map.o $(PLAYEROUTDIR)update.o $(PLAYEROUTDIR)getkey.o $(PLAYEROUTDIR)list.o $(PLAYEROUTDIR)astar.o $(PLAYEROUTDIR)move.o

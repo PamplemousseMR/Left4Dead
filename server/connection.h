@@ -23,9 +23,9 @@
 #include "option.h"
 #include "IPC.h"
 
-#include "../Commun/IPCAccess.h"
-#include "../Commun/messagesStruct.h"
-#include "../Commun/default.h"
+#include "../commun/IPCAccess.h"
+#include "../commun/messagesStruct.h"
+#include "../commun/default.h"
 
 /* =============== Fonctions =============== */
 

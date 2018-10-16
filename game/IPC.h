@@ -13,8 +13,8 @@
 
 #include "option.h"
 
-#include "../Commun/map.h"
-#include "../Commun/IPCAccess.h"
+#include "../commun/map.h"
+#include "../commun/IPCAccess.h"
 
 /* =============== Variables =============== */
 

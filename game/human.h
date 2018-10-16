@@ -11,9 +11,9 @@
 #include "zombie.h"
 #include "items.h"
 
-#include "../Commun/IPCAccess.h"
-#include "../Commun/map.h"
-#include "../Commun/messagesStruct.h"
+#include "../commun/IPCAccess.h"
+#include "../commun/map.h"
+#include "../commun/messagesStruct.h"
 
 #define HUMANS_ARRAY(line,col) humans_array[(line)*GET_WIDTH+(col)]     /* pour accéder à une case de human_array */
 

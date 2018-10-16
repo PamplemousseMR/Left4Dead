@@ -14,7 +14,7 @@
 #include "option.h"
 #include "connection.h"
 
-#include "../Commun/messagesStruct.h"
+#include "../commun/messagesStruct.h"
 
 /* =============== Fonctions =============== */
 

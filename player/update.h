@@ -7,8 +7,8 @@
 #include "connection.h"
 #include "ncurses.h"
 
-#include "../Commun/messagesStruct.h"
-#include "../Commun/map.h"
+#include "../commun/messagesStruct.h"
+#include "../commun/map.h"
 
 /* =============== Fonctions =============== */
 

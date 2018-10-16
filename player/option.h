@@ -7,7 +7,7 @@
 #include <stdio.h>                      /* fprintf */
 #include <unistd.h>                     /* getopt */
 #include <arpa/inet.h>                  /* inet_pton */
-#include "../Commun/default.h"
+#include "../commun/default.h"
 
 /* =============== Variables =============== */
 

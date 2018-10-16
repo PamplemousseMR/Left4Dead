@@ -11,9 +11,9 @@
 #include "IPC.h"
 #include "human.h"
 
-#include "../Commun/messagesStruct.h"
-#include "../Commun/IPCAccess.h"
-#include "../Commun/map.h"
+#include "../commun/messagesStruct.h"
+#include "../commun/IPCAccess.h"
+#include "../commun/map.h"
 
 /* =============== Defines =============== */
 

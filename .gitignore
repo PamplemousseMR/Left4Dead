@@ -1,8 +1,8 @@
-EditorOFiles/*
-GameOFiles/*
-PlayerOFiles/*
-ServerOFiles/*
-editor
-game
-player
-server
+editorOFiles/*
+gameOFiles/*
+playerOFiles/*
+serverOFiles/*
+editor_exe
+game_exe
+player_exe
+server_exe

@@ -10,7 +10,7 @@
 #include "Astar/list.h"
 #include "update.h"
 
-#include "../Commun/default.h"
+#include "../commun/default.h"
 
 typedef struct
 {

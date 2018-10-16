@@ -8,7 +8,7 @@
 #include <getopt.h>                         /* getopt */
 #include <string.h>                         /* strcpy */
 
-#include "../Commun/default.h"
+#include "../commun/default.h"
 
 /* =============== Options =============== */
 

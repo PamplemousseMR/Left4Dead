@@ -7,8 +7,8 @@
 
 #include "getkey.h"
 
-#include "../Commun/messagesStruct.h"
-#include "../Commun/map.h"
+#include "../commun/messagesStruct.h"
+#include "../commun/map.h"
 
 /* =============== Les tailles des fenêtres =============== */
 

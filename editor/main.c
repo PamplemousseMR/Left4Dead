@@ -6,7 +6,7 @@
 #include "signal.h"
 #include "option.h"
 
-#include "../Commun/map.h"
+#include "../commun/map.h"
 
 /* =============== Variables =============== */
 

@@ -9,7 +9,7 @@
 #include "zombie.h"
 #include "human.h"
 
-#include "../Commun/messagesStruct.h"
+#include "../commun/messagesStruct.h"
 
 /* =============== Fonctions =============== */
 
