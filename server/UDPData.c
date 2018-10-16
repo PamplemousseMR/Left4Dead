@@ -17,6 +17,7 @@ void initUDPData()
         perror("[initUDPData] Erreur lors de la creation de la socket ");
         exit(EXIT_FAILURE);
     }
+    memset(&add, 0, sizeof(struct sockaddr_in));
 
     /* Création de l'adresse du serveur */
     memset(&serv, 0, sizeof(struct sockaddr_in));
@@ -48,6 +49,7 @@ void initUDPData()
                 add.sin_port = htons(get_port.port);
 
                 /* Envoi du message */
+                memset(&send_port, 0, sizeof(send_port_t));
                 send_port = getPort();
                 if(sendto(sockfdsend, &send_port, sizeof(send_port_t), 0, (struct sockaddr*)&add, sizeof(struct sockaddr_in)) == -1)
                     perror("[initUDPData] Erreur lors de l'envoi du message ");

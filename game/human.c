@@ -104,6 +104,9 @@ void initHuman(map_t* map)
         fprintf(stderr,"[initHuman] Error lors de l'allocation dynamique de thread_life\n");
         exit(EXIT_FAILURE);
     }
+    for(hum=0 ; hum<map->player_max ; ++hum)
+        memset(&thread_life[hum], 0, sizeof(pthread_t));
+
     datas = (unsigned short*)malloc(sizeof(unsigned short)*map->player_max);
     if(datas==NULL)
     {
@@ -159,12 +162,13 @@ void initHuman(map_t* map)
         perror("[initHuman] Error lors de la creation du mutex mutex_humans ");
 
     printf("[initHuman] humains crees\n");
+    free(home_count);
 }
 
 void clearHuman()
 {
     unsigned short i;
-    void* result;
+    void* result = NULL;
 
     if(thread_life!=NULL)
     {

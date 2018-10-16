@@ -22,7 +22,7 @@ These instructions will get you a copy of the project up and running on your loc
 - [ncurses](https://en.wikipedia.org/wiki/Ncurses) : A library providing an API that allows to write Text-based user interface in a terminal.
 - [pthread](https://en.wikipedia.org/wiki/POSIX_Threads) : A library providing an API that allows to control multiple different flows of work that overlap in time.
 
-### compilation
+### Compilation
 
 Compile using the makefile : `make`.
 
@@ -35,7 +35,7 @@ Compile using the makefile : `make`.
 - clean : Clean previous compilation.
 ```
 
-### use
+### Use
 
 Start the editor to create maps : `./editor_exe`.
 ```

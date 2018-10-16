@@ -214,14 +214,13 @@ static void* updateData(void* data)
     unsigned i;
     unsigned short* map_receive = NULL;
 
-    pthread_cleanup_push(cleanMapReceive,map_receive);
-
     map_receive = (unsigned short*)malloc(sizeof(unsigned short)*map->height*map->width);
     if(map_receive==NULL)
     {
         fprintf(stderr,"[updateData] Erreur lors de l'allocation dynamique de la carte\n");
         exit(EXIT_FAILURE);
     }
+    pthread_cleanup_push(cleanMapReceive,map_receive);
 
     while(1)
     {

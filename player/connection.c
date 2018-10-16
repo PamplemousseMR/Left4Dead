@@ -107,6 +107,7 @@ void initConnections()
 void clearConnections()
 {
     ask_t ask;
+    memset(&ask, 0, sizeof(ask_t));
 
     /* envoi de la déconnection */
     ask.type = ASK_DISCONECT;

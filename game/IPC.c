@@ -133,6 +133,7 @@ void initSemaphores()
     }
 
     printf("[initSemaphores] Semaphores crees\n");
+    free(init);
 }
 
 void clearSemaphores()

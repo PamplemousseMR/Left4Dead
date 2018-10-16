@@ -35,21 +35,23 @@ static void* sendMovement(void* data)
     curr = NULL;
     list = NULL;
 
+
+    start = createNode();
+    curr = createNode();
+    getEntityPos(infos.id,&start->line,&start->col);
+    if(start->line==-1 || start->col==-1)
+        pthread_exit(NULL);
+
+    list = find(start,&infos.end);
     pthread_cleanup_push(cleanNode,start);
     pthread_cleanup_push(cleanNode,curr);
     pthread_cleanup_push(cleanList,list);
     {
-        start = createNode();
-        curr = createNode();
-        getEntityPos(infos.id,&start->line,&start->col);
-        if(start->line==-1 || start->col==-1)
-            pthread_exit(NULL);
-
-        list = find(start,&infos.end);
         current = list->nodes;
 
         for(i=0 ; i<list->count && fail<MAX_ASTAR_FAIL; ++i)
         {
+            memset(&ask, 0, sizeof(ask_t));
             ask.type = ASK_MOVE;
             ask.id = infos.id;
             ask.line = current->node->line;
@@ -91,10 +93,19 @@ static void* sendMovement(void* data)
 
 void initMove()
 {
+    unsigned short i;
     if(getType() == TYPE_ZOMBIE)
+    {
         threads = (pthread_t*)malloc(sizeof(pthread_t)*getZombieMax());
+        for(i=0 ; i<getZombieMax() ; ++i)
+            memset(&threads[i], 0, sizeof(pthread_t));
+    }
     else
+    {
         threads = (pthread_t*)malloc(sizeof(pthread_t)*HUMAN_PER_PLAYER);
+        for(i=0 ; i<HUMAN_PER_PLAYER ; ++i)
+            memset(&threads[i], 0, sizeof(pthread_t));
+    }
 
     if(threads==NULL)
     {

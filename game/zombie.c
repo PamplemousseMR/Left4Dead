@@ -366,7 +366,7 @@ static void* moveAllonThread()
 
 void moveAllonStop()
 {
-    void* result;
+    void* result = NULL;
 
     /* annulation du thread  */
     if(pthread_cancel(thread_zombies_move))

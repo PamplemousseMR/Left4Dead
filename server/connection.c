@@ -29,6 +29,7 @@ static void managerChild(int signum)
         /* annulé le deplacement des zombies */
         if(childid==0)
         {
+            memset(&command, 0, sizeof(command_t));
             command.type=COMMAND_MESSAGE;
             command.global_id=0;
             command.command_type=COMMAND_ZOMBIE_NO;
@@ -65,6 +66,8 @@ static void* receiveSocket(void* data)
     command_t command;
     while(1)
     {
+        memset(&command, 0, sizeof(command_t));
+
         if(recv(sockclient, &ask, sizeof(ask_t), 0) == -1)
         {
             fprintf(stderr,"[receiveSocket %d] Erreur lors de la reception\n",childid);
@@ -213,6 +216,8 @@ static void waitPlayer(unsigned int id)
     {
         /* remise à zero */
         ok = 1;
+        memset(&command, 0, sizeof(command_t));
+        memset(&set_port, 0, sizeof(set_port_t));
 
         /* Mise en mode passif de la socket */
         if(listen(socketfd, 1) == -1)
@@ -532,6 +537,7 @@ send_port_t getPort()
 {
     unsigned short i;
     send_port_t send_port;
+    memset(&send_port, 0, sizeof(send_port_t));
     for(i=0 ; i<array_size ; ++i)
         if(ports[i]==0)
         {
