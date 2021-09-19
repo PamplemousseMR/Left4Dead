@@ -9,9 +9,9 @@ There is also a fourth application for creating and editing maps.
 
 The client and editor interface were made with the ncurses library and react to the mouse.
 
-## Travis
+## CI
 
-[![Build Status](https://travis-ci.com/PamplemousseMR/Left4Dead.svg?branch=master)](https://travis-ci.com/PamplemousseMR/Left4Dead)
+![Build Status](https://github.com/PamplemousseMR/Left4Dead/actions/workflows/build.yml/badge.svg)
 
 ## Getting Started
 
